@@ -10,10 +10,12 @@ module.exports = (api, projectOptions) => {
     // console.log(chalk.yellow('hello, from chain webpack...'));
     // if(webpackConfig.mode === 'production') {
       // console.log('plugins: ', chalk.yellow(JSON.stringify(webpackConfig.plugins)));
+    if(webpackConfig.get('mode') === 'production') {
       webpackConfig.plugins.delete('html');
       webpackConfig.plugins.delete('preload');
       webpackConfig.plugins.delete('prefetch');
-      // webpackConfig.optimization.delete('minimizer');
+    }
+    // webpackConfig.optimization.delete('minimizer');
     // }
   });
 
